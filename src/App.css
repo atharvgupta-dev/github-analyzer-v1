@@ -30,14 +30,14 @@ body {
 
 
 .dark { 
-    background-image: url('darkmodeuse.jpg'); 
+    background-image: url('/darkmodeuse.jpg');
     background-color: #0a0a0a;
     color: #e0e0e0;
 }
 
 
 .light {
-    background-image: url('lightmodeuse.jpg');     
+    background-image: url('/lightmodeuse.jpg');    
     background-color: #ffffff;
     color: #1a1a1a;
     h1 {
@@ -54,7 +54,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 400px; /* Initial loading width */
+    width: 400px; 
     max-width: 95vw;
     background: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(15px);
