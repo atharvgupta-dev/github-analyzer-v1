@@ -4,22 +4,89 @@
     box-sizing: border-box;
 }
 
-.dark {
-    background-color: #0a0a0a;
-    color: #e0e0e0;
+
+body {
     min-height: 100vh;
-    padding: 40px 20px;
-    text-align: center;
+    margin: 0;
     font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
 }
 
+
+.dark, .light {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 0.4s ease, color 0.3s ease;
+}
+
+
+.dark { 
+    background-image: url('darkmodeuse.jpg'); 
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+
 .light {
+    background-image: url('lightmodeuse.jpg');     
     background-color: #ffffff;
     color: #1a1a1a;
-    min-height: 100vh;
-    padding: 40px 20px;
+    h1 {
+        color: #5f3c08;
+    }
+    h2 {
+        color: #5f3c08;
+    }
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px; /* Initial loading width */
+    max-width: 95vw;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
     text-align: center;
-    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+
+.dark .container {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.container.has-results {
+    width: 900px; 
+}
+
+
+.results-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    margin-top: 20px;
+    align-items: flex-start;
+    animation: slideUpFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; 
 }
 
 h1 {
@@ -30,7 +97,7 @@ h1 {
 }
 
 h2 {
-    color: #096b6b;
+    color: #0aa8a8;
 }
 
 hr {
@@ -40,17 +107,25 @@ hr {
     border-top: 1px solid #ccc;
 }
 
+h5 {
+    color: #dbdbd9;
+    margin-top: 15px;
+    font-family: 'Cambria', sans-serif;
+}
+
 .SearchBar {
     margin-bottom: 30px;
+    width: 100%;
 }
 .SearchBar input {
     padding: 10px;
-    width: 250px;
+    width: 220px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
 }
-.SearchBar button {    padding: 10px 20px;
+.SearchBar button {    
+    padding: 10px 20px;
     margin-left: 10px;
     border: none;
     border-radius: 4px;
@@ -63,24 +138,30 @@ hr {
     background-color: #0a8a8a;
 } 
 
+
 .ProfileCard {
-    background-color: #f9f9f9;
+    background-color: rgba(249, 249, 249, 0.95);
     padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+    margin: 0;
+    flex: 1; 
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+.dark .ProfileCard {
+    background-color: rgba(30, 30, 30, 0.9);
+}
+.dark .ProfileCard p {
+    color: #bbb;
+}
 .ProfileCard img {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     margin-bottom: 20px;
 } 
 .ProfileCard h2 {
     margin-bottom: 10px;
-    color: #0b5c5c;
+    color: #0aa8a8;
 }
 .ProfileCard p {
     margin-bottom: 10px;
@@ -88,12 +169,26 @@ hr {
 }
 
 .RepoList {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+    margin: 0;
+    flex: 1.5;  
     text-align: left;
+    max-height: 380px; 
+    overflow-y: auto; 
+    padding-right: 5px;
 }
 .RepoList h3 {
     margin-bottom: 15px;
     color: #0aa8a8;
-} 
+}
+
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

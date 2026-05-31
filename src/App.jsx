@@ -19,6 +19,7 @@ function App() {
             if (profileData.message === "Not Found") {
                 setError("User not found")
                 setProfile(null)
+                setRepos([])
                 return
             }
 
@@ -30,18 +31,32 @@ function App() {
             setError("")
         } catch(err) {
             setError("Something went wrong")
+            setProfile(null)
+            setRepos([])
         }
     }
 
     return (
         <div className={isDark ? "dark" : "light"}>
-            <h1>GitHub Profile Analyzer</h1>
-            <hr></hr>
-            <SearchBar onSearch={handleSearch} isDark={isDark} setIsDark={setIsDark} />
-            {error && <p>{error}</p>}
-            <hr></hr>
-            {profile && <ProfileCard profile={profile} />}
-            {profile && <RepoList repos={repos} />}
+            {/* The container expands horizontally ONLY when a profile exists */}
+            <div className={profile ? "container has-results" : "container"}>
+                <h1>GitHub Profile Analyzer</h1>
+                
+                <SearchBar onSearch={handleSearch} isDark={isDark} setIsDark={setIsDark} />
+                
+                {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
+                
+                {/* Horizontal grid container displays only when profile data exists */}
+                {profile && (
+                    <>
+                        <hr />
+                        <div className="results-wrapper">
+                            <ProfileCard profile={profile} />
+                            <RepoList repos={repos} />
+                        </div>
+                    </>
+                )}
+            </div>
         </div>
     )
 }
