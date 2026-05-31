@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dark {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.light {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0aa8a8;
+}
+
+h2 {
+    color: #096b6b;
+}
+
+hr {
+    margin: 20px auto;
+    width: 80%;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.SearchBar {
+    margin-bottom: 30px;
+}
+.SearchBar input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.SearchBar button {    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0aa8a8;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.SearchBar button:hover {
+    background-color: #0a8a8a;
+} 
+
+.ProfileCard {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.ProfileCard img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+} 
+.ProfileCard h2 {
+    margin-bottom: 10px;
+    color: #0b5c5c;
+}
+.ProfileCard p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.RepoList {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+.RepoList h3 {
+    margin-bottom: 15px;
+    color: #0aa8a8;
+} 
