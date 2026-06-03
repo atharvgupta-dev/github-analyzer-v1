@@ -1,6 +1,6 @@
-function SearchBar({ onSearch, isDark, setIsDark }) {
+function SearchBar({ onSearch }) {
     return (
-        <div>
+        <div className="SearchBar">
             <input
                 type="text"
                 id="usernameInput"
@@ -17,10 +17,6 @@ function SearchBar({ onSearch, isDark, setIsDark }) {
                 onSearch(username)
             }}>
                 Search
-            </button>
-            <br/>
-            <button onClick={() => setIsDark(!isDark)}>
-                {isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
             </button>
         </div>
     )

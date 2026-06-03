@@ -1,7 +1,7 @@
 function ProfileCard({ profile }) {
     return (
         <div>
-            <hr></hr>
+            
             <img src={profile.avatar_url} alt="avatar" width="200" />
             
             <h2><b>{profile.name}</b></h2>
@@ -14,7 +14,7 @@ function ProfileCard({ profile }) {
             <p>Account Created: {new Date(profile.created_at).toLocaleDateString()}</p>
             <p>Last Updated: {new Date(profile.updated_at).toLocaleDateString()}</p>
             </h5>
-            <hr></hr>
+            
         </div>
     )
 }

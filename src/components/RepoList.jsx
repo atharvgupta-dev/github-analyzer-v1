@@ -3,7 +3,7 @@ function RepoList({ repos }) {
         <div>
             <h3><u>Top Repositories</u></h3>
             <br />
-            {repos.map(repo => (
+            {repos.slice(0, 3).map(repo => (
                 <div key={repo.id}>
                     <h4>
                         <a href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a>
