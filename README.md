@@ -1,1 +1,1 @@
-# github-analyzer-v1
+# github-analyzer-version 1
